@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "marcd.forticlient",
+  "name": "FortiClient VPN",
+  "version": "1.0.0",
+  "author": "marcd",
+  "license": "MIT",
+  "description": "Connect the official FortiClient VPN from the bar and see IP, username, duration, and traffic.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "FortiClient VPN",
+    "description": "Toggle a FortiClient VPN profile and show the live session details.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "profile": "",
+      "refreshIntervalSec": 3
+    },
+    "schema": [
+      {
+        "key": "profile",
+        "type": "string",
+        "label": "VPN profile (blank = first profile)",
+        "defaultValue": ""
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 3
+      }
+    ]
+  }
+}
